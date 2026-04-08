@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import TrustBar from '../components/TrustBar.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { site } from '../config/site';
+---
+<Base title={site.name} description={site.description}>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-inner container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>⚡</span>
+          Built by operators, for operators
+        </div>
+        <h1>Software reviews for <em>{site.niche}</em></h1>
+        <p class="hero-sub">
+          Independent reviews and real-world comparisons. No sponsored rankings.
+          No free trials. Just what actually works at scale.
+        </p>
+        <div class="hero-actions">
+          <a href="/start-here" class="btn btn-teal btn-lg">Start Here →</a>
+          <a href="/reviews" class="btn btn-outline btn-lg" style="color:white; border-color:rgba(255,255,255,.3);">All Reviews</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="container" style="padding:2rem 1.5rem 0;">
+    <TrustBar items={[
+      { number: '100s', label: 'Tools evaluated' },
+      { number: '0', label: 'Paid placements' },
+      { number: '2026', label: 'Latest update' },
+    ]} />
+  </section>
+
+  <!-- WHY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-label">Why {site.name}</p>
+        <h2 class="section-title">Advice that holds up in the real world</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="feature-icon feature-icon-teal">🏢</div>
+          <h3>Operator perspective</h3>
+          <p>Every recommendation comes from someone who has actually deployed the tool — not a blogger reviewing a free trial.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon feature-icon-navy">⚡</div>
+          <h3>Specific to your niche</h3>
+          <p>Generic software advice doesn't translate. We focus on how tools handle the realities of {site.niche}.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon feature-icon-orange">💰</div>
+          <h3>Full cost transparency</h3>
+          <p>We list exact prices, what gets expensive at scale, and the hidden costs most reviewers skip.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="container" style="padding:2rem 1.5rem 4rem;">
+    <NewsletterSignup
+      variant="hero"
+      title={`Get the ${site.name} newsletter`}
+      description="One email a week with the best new reviews and tools we've tested. No spam."
+      ctaLabel="Subscribe"
+    />
+  </section>
+
+</Base>

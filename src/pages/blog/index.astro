@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../config/site';
+---
+<Base title="Blog" description={`The latest from ${site.name}.`}>
+  <div style="max-width:840px; margin:0 auto; padding:5rem 2rem;">
+    <p class="section-label">Blog</p>
+    <h1>Latest posts</h1>
+    <p>Articles will appear here as we publish them.</p>
+  </div>
+</Base>

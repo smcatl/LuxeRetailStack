@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config/site';
+---
+<Base title="Start Here" description={`New to ${site.name}? Here's where to begin.`}>
+  <div style="max-width:740px; margin:0 auto; padding:5rem 2rem;">
+    <p class="section-label">Start here</p>
+    <h1 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; color:var(--navy); margin-bottom:1.5rem;">
+      New to {site.name}?
+    </h1>
+    <p>
+      We're a software review site built specifically for {site.niche}. Every review is written from real deployment experience — no free trials, no press kits, no fluff.
+    </p>
+    <h2>Where to start</h2>
+    <ul>
+      <li><a href="/reviews">Browse all reviews</a> — software we've tested in production</li>
+      <li><a href="/comparisons">Comparisons</a> — head-to-head between the major options</li>
+      <li><a href="/guides">Guides</a> — playbooks and how-tos</li>
+      <li><a href="/about">About us</a> — who we are and how we operate</li>
+    </ul>
+  </div>
+</Base>

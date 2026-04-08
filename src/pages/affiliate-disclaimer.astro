@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config/site';
+---
+<Base title="Affiliate Disclosure" description={`How ${site.name} uses affiliate links.`}>
+  <div style="max-width:740px; margin:0 auto; padding:5rem 2rem;">
+    <p class="section-label">Affiliate disclosure</p>
+    <h1 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; color:var(--navy); margin-bottom:1.5rem;">
+      How {site.name} makes money
+    </h1>
+    <p>
+      Some of the links on {site.name} are affiliate links. If you click one and sign up for a paid plan, we may earn a commission. The price you pay is exactly the same.
+    </p>
+    <h2>Our policy</h2>
+    <ul>
+      <li>We never accept payment to promote a product</li>
+      <li>We only recommend tools we'd use ourselves</li>
+      <li>If a tool has problems, we say so — even if we earn a commission from it</li>
+      <li>Every affiliate link is disclosed at the top of any article that contains one</li>
+    </ul>
+    <p>
+      In compliance with FTC guidelines, we want you to know that the operator of {site.name} has a material connection to certain partners whose products we review. That connection is the affiliate commission described above.
+    </p>
+    <p>
+      If you have any questions about our review process or want to flag a concern, please reach out.
+    </p>
+  </div>
+</Base>

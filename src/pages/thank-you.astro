@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config/site';
+---
+<Base title="Thank you" description="Thanks for subscribing." noIndex={true}>
+  <div style="max-width:560px; margin:0 auto; padding:6rem 2rem; text-align:center;">
+    <div style="font-size:3rem;">🎉</div>
+    <h1 style="font-family:'Syne',sans-serif; font-size:2.25rem; font-weight:800; color:var(--navy); margin:1rem 0;">
+      You're in
+    </h1>
+    <p>
+      Check your inbox for a confirmation. Once you confirm, you'll start getting the {site.name} newsletter.
+    </p>
+    <p style="margin-top:2rem;">
+      <a href="/" class="btn btn-teal">← Back to home</a>
+    </p>
+  </div>
+</Base>

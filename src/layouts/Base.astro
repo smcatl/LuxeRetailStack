@@ -1,0 +1,228 @@
+---
+import '../styles/global.css';
+import { site, pageTitle } from '../config/site';
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
+  publishDate?: string;
+  updatedDate?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description = site.description,
+  image = '/og-default.png',
+  article = false,
+  publishDate,
+  updatedDate,
+  noIndex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = pageTitle(title);
+
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.name,
+  url: site.url,
+  logo: new URL('/favicon.svg', site.url).toString(),
+};
+
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: site.name,
+  url: site.url,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${site.url}/?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  {site.googleVerification && (
+    <meta name="google-site-verification" content={site.googleVerification} />
+  )}
+  {site.impactVerification && (
+    <meta name="impact-site-verification" value={site.impactVerification} />
+  )}
+
+  <!-- Brand color override — pulled from env via site config -->
+  <style is:inline define:vars={{ brandAccent: site.accentColor, brandAccentLight: site.accentColorLight }}>
+    :root {
+      --teal: var(--brandAccent);
+      --teal-light: var(--brandAccentLight);
+      --brand: var(--brandAccent);
+      --brand-light: var(--brandAccentLight);
+    }
+  </style>
+
+  <!-- Primary SEO -->
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
+  <meta name="author" content={site.author} />
+  <link rel="alternate" type="application/rss+xml" title={site.name} href="/rss.xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={article ? 'article' : 'website'} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, Astro.site)} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content={site.name} />
+  {publishDate && <meta property="article:published_time" content={publishDate} />}
+  {updatedDate && <meta property="article:modified_time" content={updatedDate} />}
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Plausible analytics -->
+  {site.plausibleScript && (
+    <>
+      <script async src={site.plausibleScript}></script>
+      <script is:inline>
+        window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+        plausible.init()
+      </script>
+    </>
+  )}
+
+  <!-- Site-wide structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
+
+  <!-- Impact affiliate link tracking -->
+  {site.impactCdnId && (
+    <>
+      <script async src={`https://utt.impactcdn.com/${site.impactCdnId}.js`}></script>
+      <script is:inline define:vars={{ impactCdnId: site.impactCdnId }}>
+        (function(i,m,p,a,c,t){c.ire_o=p;c[p]=c[p]||function(){(c[p].a=c[p].a||[]).push(arguments)};t=a.createElement(m);var z=a.getElementsByTagName(m)[0];t.async=1;t.src=i;z.parentNode.insertBefore(t,z)}('https://utt.impactcdn.com/'+impactCdnId+'.js','script','impactStat',document,window);impactStat('transformLinks');impactStat('trackImpression');
+      </script>
+    </>
+  )}
+
+  <ClientRouter />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-mark" aria-hidden="true">
+          <div class="logo-bar logo-bar-1"></div>
+          <div class="logo-bar logo-bar-2"></div>
+          <div class="logo-bar logo-bar-3"></div>
+        </div>
+        <span class="nav-logo-text">
+          <span class="logo-word-1">{site.brandWord1}</span>
+          <span class="logo-word-2">{site.brandWord2}</span>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/reviews" data-astro-prefetch>Reviews</a></li>
+        <li><a href="/comparisons" data-astro-prefetch>Comparisons</a></li>
+        <li><a href="/guides" data-astro-prefetch>Guides</a></li>
+        <li><a href="/about" data-astro-prefetch>About</a></li>
+        <li><a href="/start-here" class="nav-cta" data-astro-prefetch>Start Here →</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="margin-bottom:.75rem; display:inline-flex;">
+          <div class="nav-logo-mark" aria-hidden="true" style="background:rgba(255,255,255,0.15);">
+            <div class="logo-bar logo-bar-1"></div>
+            <div class="logo-bar logo-bar-2"></div>
+            <div class="logo-bar logo-bar-3"></div>
+          </div>
+          <span class="nav-logo-text">
+            <span class="logo-word-1" style="color:rgba(255,255,255,0.85);">{site.brandWord1}</span>
+            <span class="logo-word-2" style={`color:${site.accentColorLight};`}>{site.brandWord2}</span>
+          </span>
+        </a>
+        <p>{site.tagline}</p>
+      </div>
+      {site.footerReviews.length > 0 && (
+        <div class="footer-col">
+          <h5>Reviews</h5>
+          <ul>
+            {site.footerReviews.map((l) => (
+              <li><a href={l.href}>{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {site.footerGuides.length > 0 && (
+        <div class="footer-col">
+          <h5>Guides</h5>
+          <ul>
+            {site.footerGuides.map((l) => (
+              <li><a href={l.href}>{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <div class="footer-col">
+        <h5>Site</h5>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/start-here">Start Here</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/affiliate-disclaimer">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
+      <span>
+        <a href="/affiliate-disclaimer">Affiliate Disclosure</a> ·
+        <a href="/privacy">Privacy Policy</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Outbound affiliate click tracking via Plausible -->
+  <script is:inline>
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest && e.target.closest('a[data-affiliate]');
+      if (!a || typeof window.plausible !== 'function') return;
+      window.plausible('Affiliate Click', { props: { slug: a.dataset.affiliate || a.href } });
+    });
+  </script>
+
+</body>
+</html>

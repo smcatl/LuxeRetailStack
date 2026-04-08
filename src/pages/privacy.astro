@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config/site';
+---
+<Base title="Privacy Policy" description={`How ${site.name} handles your data.`}>
+  <div style="max-width:740px; margin:0 auto; padding:5rem 2rem;">
+    <p class="section-label">Privacy</p>
+    <h1 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; color:var(--navy); margin-bottom:1.5rem;">
+      Privacy Policy
+    </h1>
+    <p>
+      {site.name} collects the minimum data needed to operate. We use Plausible Analytics, a privacy-friendly analytics platform that does not use cookies and does not track personal information. We do not sell or share your data.
+    </p>
+    <h2>Email</h2>
+    <p>
+      If you sign up for our newsletter, your email is stored with our email provider and used only to send newsletter content. You can unsubscribe at any time using the link in any email.
+    </p>
+    <h2>Affiliate links</h2>
+    <p>
+      When you click an affiliate link, you may be redirected through our cloak (`/recommends/...`). We log the click for our own performance analytics; no personally identifying information is captured. See our <a href="/affiliate-disclaimer">affiliate disclosure</a> for more.
+    </p>
+    <h2>Cookies</h2>
+    <p>
+      We do not set first-party cookies. Some affiliate partners may set cookies after you click through.
+    </p>
+  </div>
+</Base>
