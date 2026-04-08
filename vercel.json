@@ -5,18 +5,53 @@
   "framework": "astro",
   "redirects": [
     {
+      "source": "/recommends/shopify-plus",
+      "destination": "https://www.shopify.com/plus",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/klaviyo",
+      "destination": "https://www.klaviyo.com/",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/gorgias",
+      "destination": "https://www.gorgias.com/",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/triplewhale",
+      "destination": "https://www.triplewhale.com/",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/cin7",
+      "destination": "https://www.cin7.com/",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/liverecover",
+      "destination": "https://liverecover.com/",
+      "permanent": false
+    },
+    {
       "source": "/recommends/gohighlevel",
-      "destination": "https://www.gohighlevel.com/?fp_ref=example",
+      "destination": "https://www.gohighlevel.com/?fp_ref=stosh61",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/unbounce",
+      "destination": "https://unbounce.com/",
       "permanent": false
     },
     {
       "source": "/recommends/aweber",
-      "destination": "https://aweber.com/?id=example",
+      "destination": "https://www.aweber.com/easy-email.htm?id=560455",
       "permanent": false
     },
     {
-      "source": "/recommends/kinsta",
-      "destination": "https://kinsta.com/?kaid=example",
+      "source": "/recommends/jotform",
+      "destination": "https://www.jotform.com/",
       "permanent": false
     }
   ],
