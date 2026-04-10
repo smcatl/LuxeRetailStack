@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "astro dev",
     "build:redirects": "node scripts/build-redirects.mjs",
-    "prebuild": "npm run build:redirects",
+    "prebuild": "npm run sync:affiliates && npm run build:redirects",
     "build": "astro build",
     "postbuild": "pagefind --site dist --output-subdir _pagefind",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "sync:affiliates": "node scripts/sync-affiliates.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.0",
