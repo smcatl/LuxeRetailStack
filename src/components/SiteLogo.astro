@@ -1,0 +1,24 @@
+---
+import SiteMark from './SiteMark.astro';
+
+interface Props { variant?: 'header' | 'footer'; }
+const { variant = 'header' } = Astro.props;
+const isFooter = variant === 'footer';
+---
+{isFooter ? (
+  <a href="/" class="nav-logo nav-logo-footer lr-wordmark" style="margin-bottom:.75rem; display:inline-flex;">
+    <SiteMark style="background:rgba(201,168,76,0.06);" />
+    <span class="nav-logo-text">
+      <span class="logo-word-1" style="color:rgba(237,232,223,0.92);">LuxeRetail</span>
+      <span class="logo-word-2" style="color:#c9a84c;">Stack</span>
+    </span>
+  </a>
+) : (
+  <a href="/" class="nav-logo nav-logo-header lr-wordmark">
+    <SiteMark />
+    <span class="nav-logo-text">
+      <span class="logo-word-1">LuxeRetail</span>
+      <span class="logo-word-2">Stack</span>
+    </span>
+  </a>
+)}

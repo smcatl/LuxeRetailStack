@@ -1,0 +1,84 @@
+/*
+ * LuxeRetailStack — Auction Catalog
+ * Dark + gold. Auction house / luxury editorial. Serif-forward Libre Baskerville,
+ * gold hairline rules, lot-number rhythms, generous tracking.
+ */
+
+.site-mark {
+  background: transparent !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+.site-mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 2px;
+}
+
+.lr-wordmark .nav-logo-text {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.005em;
+  display: inline-flex;
+  gap: 0.15em;
+  line-height: 1.1;
+}
+.lr-wordmark .logo-word-1 { color: #ede8df; }
+.lr-wordmark .logo-word-2 {
+  color: #c9a84c;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.site-nav {
+  border-bottom: 1px solid rgba(201, 168, 76, 0.22);
+  background: rgba(13, 14, 18, 0.94);
+}
+.site-nav .nav-cta {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-weight: 400;
+  border: 1px solid #c9a84c;
+  color: #c9a84c !important;
+  padding: 0.55rem 1.4rem;
+}
+
+/* Hero: subtle gold glow + thin gold rule */
+.hero {
+  background:
+    radial-gradient(ellipse at top, rgba(201, 168, 76, 0.06), transparent 60%),
+    var(--brandBg);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+}
+
+/* Section labels — lot-number style */
+.section-label {
+  color: #c9a84c;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+.section-label::before { content: '— '; opacity: 0.6; }
+.section-label::after { content: ' —'; opacity: 0.6; }
+
+h1, h2, h3 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+}
+
+/* Thin gold hairline under section titles */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #c9a84c;
+  margin-top: 0.85rem;
+  opacity: 0.7;
+}
