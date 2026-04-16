@@ -29,7 +29,7 @@ import { site } from '../config/site';
   </section>
 
   <!-- TRUST BAR -->
-  <section class="container" style="padding:2rem 1.5rem 0;">
+  <section class="container" style="padding:clamp(1.5rem,4vw,2rem) clamp(1rem,4vw,1.5rem) 0;">
     <TrustBar items={[
       { number: '100s', label: 'Tools evaluated' },
       { number: '0', label: 'Paid placements' },
@@ -66,7 +66,7 @@ import { site } from '../config/site';
   </section>
 
   <!-- NEWSLETTER -->
-  <section class="container" style="padding:2rem 1.5rem 4rem;">
+  <section class="container" style="padding:clamp(1.5rem,4vw,2rem) clamp(1rem,4vw,1.5rem) clamp(2.5rem,6vw,4rem);">
     <NewsletterSignup
       variant="hero"
       title={`Get the ${site.name} newsletter`}
