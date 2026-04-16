@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { site } from '../config/site';
 ---
-<Base title={`About ${site.name}`} description={`${site.name} is independent software reviews for ${site.niche}.`}>
+<Base title={`About ${site.name}`} description={`${site.name} is an editorially independent review site for ${site.niche}. Reviews drawn from a team with thousands of deployments across their combined network.`}>
   <div style="max-width:740px; margin:0 auto; padding:5rem 2rem;">
     <p class="section-label">About this site</p>
     <h1 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; color:var(--navy); margin-bottom:1.5rem; letter-spacing:-0.03em; line-height:1.1;">
@@ -12,11 +12,11 @@ import { site } from '../config/site';
       {site.tagline}
     </p>
     <p>
-      We focus exclusively on the tools that matter to {site.niche}. Every review is based on real deployment experience — not vendor demos, not free trials, not press kits.
+      The {site.name} team has thousands of deployments across their combined network and careers in {site.niche}. Every review is based on real operational experience — not vendor demos, not free trials, not press kits.
     </p>
-    <h2>How we make money</h2>
+    <h2>Editorial standards</h2>
     <p>
-      Some of the links on this site are affiliate links. If you sign up for a tool through one of our links, we may earn a commission at no extra cost to you. We only ever recommend tools we'd actually use ourselves, and we disclose every affiliate relationship. See our <a href="/affiliate-disclaimer">full affiliate disclosure</a>.
+      {site.name} is editorially independent. Rankings are never for sale. The {site.name} team evaluates every tool on operational merit — verdicts reflect what actually performs, not vendor relationships.
     </p>
   </div>
 </Base>
