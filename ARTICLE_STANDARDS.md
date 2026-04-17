@@ -29,10 +29,28 @@ Last updated: March 2026
 - All h2/h3 must have id attributes for TOC
 
 ## Affiliate Link Rules
-- Placeholder format: https://operatorstack.tech/recommends/toolname
+- Placeholder format: https://luxeretailstack.com/recommends/toolname
 - CTA text must be specific: "Start Free 30-Day Trial" not "Try it"
-- Max 3 CTAs per article (after intro, mid-article, end)
+- Primary CTA: 3 placements for the main reviewed tool (after intro, mid-article, end)
 - Always disclose: "Affiliate link -- we earn X% if you sign up"
+
+### Cross-linking (REQUIRED for monetization depth)
+Every article must naturally reference 2-4 additional affiliate partners beyond
+the primary tool. These are NOT extra CTAs — they are contextual mentions that
+link to the partner's review or /recommends/ page. Patterns:
+
+1. **Comparison mentions**: "Unlike [OtherTool](/recommends/othertool), [Primary] handles X differently..."
+2. **Integration callouts**: "[Primary] pairs well with [Tool](/recommends/tool) for [use case]"
+3. **Alternatives section**: "If [Primary] isn't right, consider [Tool A](/recommends/toola) for X or [Tool B](/recommends/toolb) for Y"
+4. **Further Reading links**: link to other reviews/guides that feature affiliate partners
+5. **Stack recommendations**: "Most operators pair this with [Tool](/recommends/tool) and [Tool](/recommends/tool2)"
+
+Rules for cross-links:
+- Must feel natural and helpful to the reader, not forced
+- Each cross-linked partner gets 1-2 contextual mentions (NOT big CTA buttons)
+- Only link partners that are genuinely relevant to the article's topic
+- Use the site's /recommends/ redirect URL, not raw affiliate URLs
+- Reference the site's affiliates.json for available partners to cross-link
 
 ## Article Structures
 
