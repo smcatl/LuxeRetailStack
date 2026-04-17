@@ -67,7 +67,7 @@
     "network": "firstpromoter",
     "status": "active",
     "category": "all-in-one-marketing",
-    "notes": "Carried over from OperatorStack — VERIFY with GHL whether the same fp_ref code can be used for promoting from luxeretailstack.com or if a separate registration is required."
+    "notes": "Carried over from LuxeRetailStack — VERIFY with GHL whether the same fp_ref code can be used for promoting from luxeretailstack.com or if a separate registration is required."
   },
   {
     "slug": "unbounce",
@@ -87,7 +87,7 @@
     "network": "direct",
     "status": "active",
     "category": "email-marketing",
-    "notes": "Carried over from OperatorStack (id=560455). VERIFY same ID can be used on luxeretailstack.com or register separately. Stable backup for newer tools that capped commissions."
+    "notes": "Carried over from LuxeRetailStack (id=560455). VERIFY same ID can be used on luxeretailstack.com or register separately. Stable backup for newer tools that capped commissions."
   },
   {
     "slug": "jotform",

@@ -2,7 +2,7 @@ import rss from '@astrojs/rss';
 
 export async function GET(context) {
   return rss({
-    title: 'OperatorStack',
+    title: 'LuxeRetailStack',
     description: 'Software reviews and tech stack advice for multi-location business operators.',
     site: context.site,
     items: [
