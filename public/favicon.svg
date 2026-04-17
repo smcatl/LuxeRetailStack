@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0D1F3C"/>
-  <text x="50%" y="50%" dominant-baseline="central"
-    text-anchor="middle" font-family="Arial Black, sans-serif"
-    font-weight="900" font-size="13" fill="#4DB6AC">OS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="2" fill="#0d0e12"/>
+  <rect x="4" y="6" width="24" height="20" fill="none" stroke="#c9a84c" stroke-width="0.8"/>
+  <rect x="5.5" y="7.5" width="21" height="17" fill="none" stroke="#c9a84c" stroke-width="0.4" opacity="0.6"/>
+  <text x="16" y="22" font-family="'Libre Baskerville', Georgia, serif" font-size="16" font-style="italic" font-weight="700" fill="#c9a84c" text-anchor="middle">L</text>
 </svg>
