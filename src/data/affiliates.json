@@ -7,7 +7,7 @@
     "network": "impact",
     "status": "pending",
     "category": "ecommerce-platform",
-    "notes": "Standard for high-end commerce. Bonus offers historically run through Mar 31. Apply: https://www.shopify.com/affiliates. Hosted on Impact — has API for earnings."
+    "notes": "Standard for high-end commerce. Bonus offers historically run through Mar 31. Apply: https://www.shopify.com/affiliates. Hosted on Impact \u2014 has API for earnings."
   },
   {
     "slug": "klaviyo",
@@ -23,7 +23,7 @@
     "slug": "gorgias",
     "name": "Gorgias",
     "url": "https://www.gorgias.com/",
-    "commission": "20% recurring (first 2 years, capped — VIP Partner status removes cap)",
+    "commission": "20% recurring (first 2 years, capped \u2014 VIP Partner status removes cap)",
     "network": "partnerstack",
     "status": "pending",
     "category": "helpdesk",
@@ -33,11 +33,11 @@
     "slug": "triplewhale",
     "name": "Triple Whale",
     "url": "https://www.triplewhale.com/",
-    "commission": "10–20% recurring, 6-month cap",
+    "commission": "10\u201320% recurring, 6-month cap",
     "network": "direct",
     "status": "pending",
     "category": "analytics",
-    "notes": "Luxury brands love their data. Note the 6-month commission cap — not a lifetime program. Apply: https://www.triplewhale.com/partners"
+    "notes": "Luxury brands love their data. Note the 6-month commission cap \u2014 not a lifetime program. Apply: https://www.triplewhale.com/partners"
   },
   {
     "slug": "cin7",
@@ -47,13 +47,13 @@
     "network": "direct",
     "status": "pending",
     "category": "inventory-management",
-    "notes": "High-ticket inventory for jewelry/watches/luxury retailers. Top referrers can earn $10k–$100k/year. Apply: https://www.cin7.com/partner-program/"
+    "notes": "High-ticket inventory for jewelry/watches/luxury retailers. Top referrers can earn $10k\u2013$100k/year. Apply: https://www.cin7.com/partner-program/"
   },
   {
     "slug": "liverecover",
     "name": "LiveRecover",
     "url": "https://liverecover.com/",
-    "commission": "15% recurring (lifetime — 'as long as they stay')",
+    "commission": "15% recurring (lifetime \u2014 'as long as they stay')",
     "network": "direct",
     "status": "pending",
     "category": "sms-cart-recovery",
@@ -67,7 +67,7 @@
     "network": "firstpromoter",
     "status": "active",
     "category": "all-in-one-marketing",
-    "notes": "Carried over from LuxeRetailStack — VERIFY with GHL whether the same fp_ref code can be used for promoting from luxeretailstack.com or if a separate registration is required."
+    "notes": "Carried over from LuxeRetailStack \u2014 VERIFY with GHL whether the same fp_ref code can be used for promoting from luxeretailstack.com or if a separate registration is required."
   },
   {
     "slug": "unbounce",
@@ -97,6 +97,51 @@
     "network": "direct",
     "status": "pending",
     "category": "forms-data",
-    "notes": "Use the AGENCY tier for lifetime 30% — don't apply to standard program. Luxury angle: concierge intake forms, private appointment booking. Apply: https://www.jotform.com/affiliate-program/"
+    "notes": "Use the AGENCY tier for lifetime 30% \u2014 don't apply to standard program. Luxury angle: concierge intake forms, private appointment booking. Apply: https://www.jotform.com/affiliate-program/"
+  },
+  {
+    "slug": "invideo",
+    "name": "InVideo",
+    "url": "https://invideo.sjv.io/MX07zn",
+    "commission": "Impact affiliate",
+    "network": "impact",
+    "status": "active",
+    "category": "Video & Content"
+  },
+  {
+    "slug": "retouch4me",
+    "name": "Retouch4me",
+    "url": "https://relu0u.pxf.io/rEGBZd",
+    "commission": "Impact affiliate",
+    "network": "impact",
+    "status": "active",
+    "category": "Photo & Design"
+  },
+  {
+    "slug": "munch-studio",
+    "name": "Munch Studio",
+    "url": "https://goto.munchstudio.com/B5zEM1",
+    "commission": "Impact affiliate",
+    "network": "impact",
+    "status": "active",
+    "category": "Social Media"
+  },
+  {
+    "slug": "omnisend",
+    "name": "Omnisend",
+    "url": "https://your.omnisend.com/n4RkQ6",
+    "commission": "Impact affiliate",
+    "network": "impact",
+    "status": "active",
+    "category": "Email Marketing"
+  },
+  {
+    "slug": "melio",
+    "name": "Melio",
+    "url": "https://melio.sjv.io/bkDbo9",
+    "commission": "Impact affiliate",
+    "network": "impact",
+    "status": "active",
+    "category": "Payments & Billing"
   }
 ]
