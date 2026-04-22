@@ -12,8 +12,8 @@
   {
     "slug": "aweber",
     "name": "AWeber",
-    "url": "https://www.aweber.com/easy-email.htm?id=560455",
-    "commission": "Up to 50% recurring (lifetime)",
+    "url": "https://www.aweber.com/pro.htm?id=560455",
+    "commission": "50% recurring",
     "network": "direct",
     "status": "active",
     "category": "email-marketing",
@@ -90,5 +90,59 @@
     "network": "impact",
     "status": "active",
     "category": "Support & Helpdesk"
+  },
+  {
+    "slug": "esignly",
+    "name": "eSignly",
+    "url": "https://www.esignly.com/?via=stosh",
+    "commission": "10% recurring",
+    "network": "rewardful",
+    "status": "active",
+    "category": "Documents & E-Signatures"
+  },
+  {
+    "slug": "profitbooks",
+    "name": "ProfitBooks",
+    "url": "https://www.profitbookshq.com/users/sign_up?partner=DZvqxdd4t0vk",
+    "commission": "30% recurring 3 years",
+    "network": "other",
+    "status": "active",
+    "category": "Accounting"
+  },
+  {
+    "slug": "clickfunnels",
+    "name": "ClickFunnels",
+    "url": "https://www.clickfunnels.com/signup-flow?aff=97be1496e78365fdf00fe7009d2e595d9d6c6163fb4fd6d02e61b30b9e8a7f30",
+    "commission": "30% recurring",
+    "network": "direct",
+    "status": "active",
+    "category": "Sales Funnels"
+  },
+  {
+    "slug": "moosend",
+    "name": "Moosend",
+    "url": "https://trymoo.moosend.com/68v8v144fh7a",
+    "commission": "30% lifetime",
+    "network": "direct",
+    "status": "active",
+    "category": "Email Marketing"
+  },
+  {
+    "slug": "invoice-ninja",
+    "name": "Invoice Ninja",
+    "url": "https://app.invoicing.co/#/register?rc=7n49ohj9s7tsdajjm4f8y8nswxnnmgir",
+    "commission": "50% for 3-4 years",
+    "network": "direct",
+    "status": "active",
+    "category": "Invoicing"
+  },
+  {
+    "slug": "cloudways",
+    "name": "Cloudways",
+    "url": "https://www.cloudways.com/en/?id=2108276",
+    "commission": "$30 + 7% lifetime",
+    "network": "direct",
+    "status": "active",
+    "category": "Hosting"
   }
 ]
