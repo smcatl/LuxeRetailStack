@@ -182,8 +182,8 @@ export default async function handler(req, res) {
 
   // ── Step 9: Ping search engines to recrawl sitemap ──
   try {
-    fetch('https://www.google.com/ping?sitemap=https://operatorstack.tech/sitemap-index.xml').catch(() => {});
-    fetch('https://www.bing.com/ping?sitemap=https://operatorstack.tech/sitemap-index.xml').catch(() => {});
+    fetch('https://www.google.com/ping?sitemap=https://luxeretailstack.com/sitemap-index.xml').catch(() => {});
+    fetch('https://www.bing.com/ping?sitemap=https://luxeretailstack.com/sitemap-index.xml').catch(() => {});
   } catch (_) {}
 
   // ── Step 10: Return success ──

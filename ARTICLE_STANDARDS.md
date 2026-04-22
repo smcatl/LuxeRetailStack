@@ -29,7 +29,10 @@ Last updated: April 2026
 - Title: 50-60 chars, include "2026", include primary keyword
 - Description: 150-160 chars, include primary keyword naturally
 - Primary keyword in first paragraph
-- At least 3 internal links per article
+- Minimum 5 internal links per article (reviews, guides, comparisons, further reading)
+- Minimum 3 affiliate /recommends/ links per article (primary CTA + 2 cross-links)
+- Every article must link to at least 2 other articles on the same site
+- Include a "Related Articles" or "Further Reading" section at the bottom with 3-5 links
 - All h2/h3 must have id attributes for TOC
 
 ## Affiliate Link Rules
