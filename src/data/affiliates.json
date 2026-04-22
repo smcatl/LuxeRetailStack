@@ -1,65 +1,5 @@
 [
   {
-    "slug": "shopify-plus",
-    "name": "Shopify Plus",
-    "url": "https://www.shopify.com/plus",
-    "commission": "20% recurring + $500 signup bonus (lifetime)",
-    "network": "impact",
-    "status": "pending",
-    "category": "ecommerce-platform",
-    "notes": "Standard for high-end commerce. Bonus offers historically run through Mar 31. Apply: https://www.shopify.com/affiliates. Hosted on Impact \u2014 has API for earnings."
-  },
-  {
-    "slug": "klaviyo",
-    "name": "Klaviyo",
-    "url": "https://www.klaviyo.com/",
-    "commission": "Up to 20% recurring (lifetime)",
-    "network": "direct",
-    "status": "pending",
-    "category": "email-marketing",
-    "notes": "Essential for luxury VIP email segmenting. K:Partners program relaunched for 2026. Apply: https://www.klaviyo.com/partner-program"
-  },
-  {
-    "slug": "gorgias",
-    "name": "Gorgias",
-    "url": "https://www.gorgias.com/",
-    "commission": "20% recurring (first 2 years, capped \u2014 VIP Partner status removes cap)",
-    "network": "partnerstack",
-    "status": "pending",
-    "category": "helpdesk",
-    "notes": "High-end ecommerce helpdesk. Push for VIP Partner status to unlock lifetime. Apply: https://www.gorgias.com/partners"
-  },
-  {
-    "slug": "triplewhale",
-    "name": "Triple Whale",
-    "url": "https://www.triplewhale.com/",
-    "commission": "10\u201320% recurring, 6-month cap",
-    "network": "direct",
-    "status": "pending",
-    "category": "analytics",
-    "notes": "Luxury brands love their data. Note the 6-month commission cap \u2014 not a lifetime program. Apply: https://www.triplewhale.com/partners"
-  },
-  {
-    "slug": "cin7",
-    "name": "Cin7",
-    "url": "https://www.cin7.com/",
-    "commission": "20% recurring (lifetime)",
-    "network": "direct",
-    "status": "pending",
-    "category": "inventory-management",
-    "notes": "High-ticket inventory for jewelry/watches/luxury retailers. Top referrers can earn $10k\u2013$100k/year. Apply: https://www.cin7.com/partner-program/"
-  },
-  {
-    "slug": "liverecover",
-    "name": "LiveRecover",
-    "url": "https://liverecover.com/",
-    "commission": "15% recurring (lifetime \u2014 'as long as they stay')",
-    "network": "direct",
-    "status": "pending",
-    "category": "sms-cart-recovery",
-    "notes": "SMS-based cart recovery. One of the few with a true lifetime policy. Apply: https://liverecover.com/partners"
-  },
-  {
     "slug": "gohighlevel",
     "name": "GoHighLevel",
     "url": "https://www.gohighlevel.com/?fp_ref=stosh61",
@@ -70,16 +10,6 @@
     "notes": "Carried over from LuxeRetailStack \u2014 VERIFY with GHL whether the same fp_ref code can be used for promoting from luxeretailstack.com or if a separate registration is required."
   },
   {
-    "slug": "unbounce",
-    "name": "Unbounce",
-    "url": "https://unbounce.com/",
-    "commission": "20% recurring (lifetime)",
-    "network": "partnerstack",
-    "status": "pending",
-    "category": "landing-pages",
-    "notes": "Best for high-design luxury landing pages that outperform stock templates. Apply: https://unbounce.com/partner-program/. PartnerStack has API."
-  },
-  {
     "slug": "aweber",
     "name": "AWeber",
     "url": "https://www.aweber.com/easy-email.htm?id=560455",
@@ -88,16 +18,6 @@
     "status": "active",
     "category": "email-marketing",
     "notes": "Carried over from LuxeRetailStack (id=560455). VERIFY same ID can be used on luxeretailstack.com or register separately. Stable backup for newer tools that capped commissions."
-  },
-  {
-    "slug": "jotform",
-    "name": "Jotform (Agency)",
-    "url": "https://www.jotform.com/",
-    "commission": "30% recurring (Agency program, lifetime)",
-    "network": "direct",
-    "status": "pending",
-    "category": "forms-data",
-    "notes": "Use the AGENCY tier for lifetime 30% \u2014 don't apply to standard program. Luxury angle: concierge intake forms, private appointment booking. Apply: https://www.jotform.com/affiliate-program/"
   },
   {
     "slug": "invideo",
@@ -143,5 +63,32 @@
     "network": "impact",
     "status": "active",
     "category": "Payments & Billing"
+  },
+  {
+    "slug": "surveysparrow",
+    "name": "SurveySparrow",
+    "url": "https://surveysparrowinc.pxf.io/zzegVO",
+    "commission": "Impact affiliate",
+    "network": "impact",
+    "status": "active",
+    "category": "Customer Feedback"
+  },
+  {
+    "slug": "thrivesparrow",
+    "name": "ThriveSparrow",
+    "url": "https://thrivesparrow.sjv.io/aN54qq",
+    "commission": "Impact affiliate",
+    "network": "impact",
+    "status": "active",
+    "category": "HR & Employee Engagement"
+  },
+  {
+    "slug": "sparrowdesk",
+    "name": "SparrowDesk",
+    "url": "https://sparrowdesk.pxf.io/AgmG9J",
+    "commission": "Impact affiliate",
+    "network": "impact",
+    "status": "active",
+    "category": "Support & Helpdesk"
   }
 ]
