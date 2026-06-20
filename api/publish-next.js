@@ -1,59 +1,44 @@
-const GITHUB_REPO = 'smcatl/OperatorStack';
+const GITHUB_REPO = 'smcatl/LuxeRetailStack';
 const GITHUB_BRANCH = 'main';
 
-const AFFILIATE_PROGRAMS = {
-  gohighlevel: {
-    name: 'GoHighLevel',
-    commission: '40% lifetime recurring',
-    links: {
-      default: 'https://www.gohighlevel.com/?fp_ref=stosh61',
-      annual: 'https://gohighlevel.com/annual?fp_ref=stosh61',
-      pro: 'https://www.gohighlevel.com/protrial?fp_ref=stosh61',
-      upgrade: 'https://app.gohighlevel.com/offers/affiliate-upgrade?fp_ref=stosh61',
-    },
-    primaryLink: 'https://www.gohighlevel.com/?fp_ref=stosh61',
-  },
-  aweber: {
-    name: 'AWeber',
-    commission: '30% lifetime recurring',
-    note: 'Promotes both Free and Plus plans',
-    primaryLink: 'https://www.aweber.com/easy-email.htm?id=560455',
-  },
-  cloudways: {
-    name: 'Cloudways',
-    commission: '$30 + 7% lifetime recurring',
-    primaryLink: 'https://www.cloudways.com/en/?id=2108276',
-  },
-  moosend: {
-    name: 'Moosend',
-    commission: '30% lifetime recurring',
-    primaryLink: 'https://trymoo.moosend.com/68v8v144fh7a',
-  },
-  profitbooks: {
-    name: 'ProfitBooks',
-    commission: '30% recurring for 3 years',
-    primaryLink: 'https://www.profitbookshq.com/users/sign_up?partner=DZvqxdd4t0vk',
-  },
-  esignly: {
-    name: 'Esignly',
-    commission: '10% recurring',
-    primaryLink: 'https://www.esignly.com/?via=stosh',
-  },
-  docparser: {
-    name: 'Docparser',
-    commission: 'recurring — 30 day cookie',
-    primaryLink: 'https://docparser.com/?ref=efhmj',
-    note: 'Add ?ref=efhmj to any docparser.com URL',
-  },
-};
-
+// dynamic-affiliates:auto-managed
+// Load affiliate registry from src/data/affiliates.json via GitHub Contents API.
+// Source of truth: stacksites-admin commits → next cron picks up new URLs.
+async function loadAffiliatePrograms(githubToken) {
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/src/data/affiliates.json?ref=${GITHUB_BRANCH}`,
+      { headers: ghHeaders(githubToken) }
+    );
+    if (!res.ok) return {};
+    const file = await res.json();
+    const data = JSON.parse(Buffer.from(file.content, 'base64').toString('utf-8'));
+    const list = Array.isArray(data) ? data : (data.affiliates ?? []);
+    const map = {};
+    for (const a of list) {
+      if (!a || !a.slug || !a.url) continue;
+      map[a.slug] = {
+        name: a.name || a.slug,
+        primaryLink: a.url,
+        commission: a.commission || '',
+        network: a.network || 'direct',
+      };
+    }
+    return map;
+  } catch (_) {
+    return {};
+  }
+}
 export default async function handler(req, res) {
-  const githubToken = process.env.OSGIT_TOKEN;
+  const githubToken = process.env.GITHUB_TOKEN;
   const anthropicKey = process.env.ANTHROPIC_API_KEY;
 
   if (!githubToken || !anthropicKey) {
-    return res.status(500).json({ error: 'Missing OSGIT_TOKEN or ANTHROPIC_API_KEY' });
+    return res.status(500).json({ error: 'Missing GITHUB_TOKEN or ANTHROPIC_API_KEY' });
   }
+
+  // ── Step 0: Load latest affiliate registry from the repo ──
+  const AFFILIATE_PROGRAMS = await loadAffiliatePrograms(githubToken);
 
   // ── Step 1: Read queue.json from GitHub ──
   let queueData, queueSha;
@@ -83,7 +68,7 @@ export default async function handler(req, res) {
   const today = new Date().toISOString().split('T')[0];
   let generatedContent;
   try {
-    generatedContent = await callClaude(anthropicKey, article, today);
+    generatedContent = await callClaude(anthropicKey, article, today, AFFILIATE_PROGRAMS);
   } catch (err) {
     return res.status(500).json({ error: 'Claude API failed', detail: err.message });
   }
@@ -226,7 +211,7 @@ function getFilePath(category, slug) {
 }
 
 // ── Helper: Resolve affiliate links from article data ──
-function resolveAffiliateLinks(articleLinks) {
+function resolveAffiliateLinks(articleLinks, AFFILIATE_PROGRAMS) {
   if (!articleLinks) return 'none';
   // Replace any /recommends/slug patterns with real tracking URLs
   let resolved = articleLinks;
@@ -240,8 +225,8 @@ function resolveAffiliateLinks(articleLinks) {
 }
 
 // ── Helper: Call Claude API ──
-async function callClaude(apiKey, article, today) {
-  const affiliateInfo = resolveAffiliateLinks(article.affiliateLinks);
+async function callClaude(apiKey, article, today, AFFILIATE_PROGRAMS) {
+  const affiliateInfo = resolveAffiliateLinks(article.affiliateLinks, AFFILIATE_PROGRAMS);
 
   const systemPrompt = `You are a member of the OperatorStack editorial team. Your team has collectively managed thousands of business locations across restaurants, gyms, salons, retail, and service businesses, and evaluated thousands of software tools over your careers. Write from a team perspective using 'we' and 'our team' rather than 'I'. Voice is direct, experienced, and credible. Never use filler phrases. Always include real operator context — what breaks at scale, what the tool actually costs at 10+ locations, and who it's for.`;
 
