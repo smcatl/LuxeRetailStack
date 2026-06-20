@@ -7,6 +7,8 @@
  * import.meta.env without the PUBLIC_ prefix and are only readable in api/.
  */
 
+import settings from '../data/site-settings.json';
+
 const env = import.meta.env;
 
 function required(name: string, value: string | undefined): string {
@@ -58,11 +60,15 @@ export const site = {
   logoSvgPath: env.PUBLIC_LOGO_SVG_PATH ?? '/favicon.svg',
 
   // Analytics + verification
-  plausibleScript: env.PUBLIC_PLAUSIBLE_SCRIPT ?? '',
-  plausibleDomain: env.PUBLIC_PLAUSIBLE_DOMAIN ?? '',
+  // Analytics + verification — source of truth: src/data/site-settings.json,
+  // managed via the stacksites-admin UI. Do NOT hardcode here.
+  plausibleScript: settings.plausibleScriptId
+    ? `https://plausible.io/js/${settings.plausibleScriptId}.js`
+    : '',
+  plausibleDomain: settings.plausibleDomain ?? '',
   impactCdnId: env.PUBLIC_IMPACT_CDN_ID ?? '',
-  googleVerification: env.PUBLIC_GOOGLE_SITE_VERIFICATION ?? '',
-  impactVerification: env.PUBLIC_IMPACT_SITE_VERIFICATION ?? '',
+  googleVerification: settings.googleVerification ?? '',
+  impactVerification: (settings.impactVerification ?? []).join(','),
 
   // Editorial — used by api/generate-article.js (server-side only)
   editorialPersona:
