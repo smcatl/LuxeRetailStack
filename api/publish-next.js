@@ -180,10 +180,20 @@ export default async function handler(req, res) {
     // Non-critical — don't block the response
   }
 
-  // ── Step 9: Ping search engines to recrawl sitemap ──
+  // ── Step 9: IndexNow — auto-submit new article URL to Bing/Yandex/Naver ──
+  // Google deprecated /ping in 2023; IndexNow is the modern instant-index protocol.
   try {
-    fetch('https://www.google.com/ping?sitemap=https://luxeretailstack.com/sitemap-index.xml').catch(() => {});
-    fetch('https://www.bing.com/ping?sitemap=https://luxeretailstack.com/sitemap-index.xml').catch(() => {});
+    const articleUrl = `https://luxe.stackedoperator.com${filePath.replace('src/pages', '').replace('.astro', '')}`;
+    fetch('https://api.indexnow.org/indexnow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        host: 'luxe.stackedoperator.com',
+        key: '671555e770190687abbc407e41a239e0',
+        keyLocation: 'https://luxe.stackedoperator.com/671555e770190687abbc407e41a239e0.txt',
+        urlList: [articleUrl],
+      }),
+    }).catch(() => {});
   } catch (_) {}
 
   // ── Step 10: Return success ──

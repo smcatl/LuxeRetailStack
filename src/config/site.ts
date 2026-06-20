@@ -74,6 +74,16 @@ export const site = {
     : settings.googleVerification ? [settings.googleVerification] : [],
   impactVerification: settings.impactVerification ?? [],
 
+  // Cross-site portfolio links (rendered in footer "More from StackedOperator")
+  // Auto-populated by admin's /api/sites/<slug>/settings/export at build time.
+  sisterSites: (settings.sisterSites ?? []) as Array<{
+    slug: string;
+    name: string;
+    niche: string;
+    url: string;
+    accent: string;
+  }>,
+
   // Editorial — used by api/generate-article.js (server-side only)
   editorialPersona:
     env.EDITORIAL_PERSONA ??

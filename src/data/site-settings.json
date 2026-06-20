@@ -11,5 +11,70 @@
   "extras": {
     "canonicalSubdomain": "luxe.stackedoperator.com",
     "standaloneDomain": "luxeretailstack.com"
-  }
+  },
+  "sisterSites": [
+    {
+      "slug": "operatorstack",
+      "name": "OperatorStack",
+      "niche": "multi-location operators",
+      "url": "https://operators.stackedoperator.com",
+      "accent": "#00897B"
+    },
+    {
+      "slug": "strstack",
+      "name": "STRStack",
+      "niche": "short-term rental operators",
+      "url": "https://str.stackedoperator.com",
+      "accent": "#3ECFB2"
+    },
+    {
+      "slug": "contractoredge",
+      "name": "ContractorEdge",
+      "niche": "contractors & field operations",
+      "url": "https://contractors.stackedoperator.com",
+      "accent": "#E8560A"
+    },
+    {
+      "slug": "restaurantstack",
+      "name": "RestaurantStack",
+      "niche": "restaurant groups & chains",
+      "url": "https://restaurants.stackedoperator.com",
+      "accent": "#BF360C"
+    },
+    {
+      "slug": "traveloperator",
+      "name": "TravelOperator",
+      "niche": "travel agencies & tour operators",
+      "url": "https://travel.stackedoperator.com",
+      "accent": "#0E7490"
+    },
+    {
+      "slug": "medspaoperator",
+      "name": "MedSpaOperator",
+      "niche": "med spas, aesthetics & wellness",
+      "url": "https://medspa.stackedoperator.com",
+      "accent": "#14B8A6"
+    },
+    {
+      "slug": "realestateopshub",
+      "name": "RealEstateOpsHub",
+      "niche": "real estate brokerages & property mgr",
+      "url": "https://realestate.stackedoperator.com",
+      "accent": "#1E40AF"
+    },
+    {
+      "slug": "fitbizstack",
+      "name": "FitBizStack",
+      "niche": "gyms, studios & fitness",
+      "url": "https://fitness.stackedoperator.com",
+      "accent": "#DC2626"
+    },
+    {
+      "slug": "ecommerceoperator",
+      "name": "EcommerceOperator",
+      "niche": "DTC & ecommerce operators",
+      "url": "https://ecommerce.stackedoperator.com",
+      "accent": "#EA580C"
+    }
+  ]
 }

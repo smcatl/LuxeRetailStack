@@ -35,6 +35,18 @@ const orgLd = {
   name: site.name,
   url: site.url,
   logo: new URL('/favicon.svg', site.url).toString(),
+  // sameAs links to the umbrella + all 9 sister sites in the StackedOperator
+  // portfolio. This tells Google these properties are operated by one entity,
+  // consolidating authority signals across the network.
+  sameAs: [
+    'https://stackedoperator.com',
+    ...(site.sisterSites ?? []).map((s: { url: string }) => s.url),
+  ],
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'StackedOperator',
+    url: 'https://stackedoperator.com',
+  },
 };
 
 const websiteLd = {
@@ -81,6 +93,35 @@ const websiteLd = {
       --font-heading: var(--fontBody);
       --font-body: var(--fontBody);
     }
+
+/* sister-sites-footer:auto-managed */
+.footer-col-sisters .sister-sites-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 0.85rem;
+}
+.footer-col-sisters .sister-sites-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.825rem;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.footer-col-sisters .sister-sites-list a:hover {
+  color: rgba(255,255,255,0.95);
+}
+.footer-col-sisters .sister-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
   </style>
 
   <!-- Primary SEO -->
@@ -192,6 +233,24 @@ const websiteLd = {
           </ul>
         </div>
       )}
+      {/* sister-sites-footer:auto-managed — driven by admin's SITES registry, do not hand-edit */}
+      <!-- sister-sites-footer:auto-managed -->
+      {site.sisterSites && site.sisterSites.length > 0 && (
+        <div class="footer-col footer-col-sisters">
+          <h5>More from StackedOperator</h5>
+          <ul class="sister-sites-list">
+            {site.sisterSites.map((sister) => (
+              <li>
+                <a href={sister.url} rel="noopener" title={sister.niche}>
+                  <span class="sister-dot" style={`background:${sister.accent};`} aria-hidden="true"></span>
+                  {sister.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div class="footer-col">
         <h5>Site</h5>
         <ul>
