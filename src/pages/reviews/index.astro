@@ -1,11 +1,172 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { site } from '../../config/site';
+
+// Astro's import.meta.glob runs at build time — scans every .astro file in
+// this directory and gives us frontmatter + path. Index auto-updates as
+// cron publishes new articles. No manual maintenance.
+const modules = import.meta.glob('./*.astro', { eager: true });
+const articles = Object.entries(modules)
+  .filter(([path]) => !path.includes('index.astro'))
+  .map(([path, mod]: [string, any]) => {
+    const slug = path.replace('./', '').replace('.astro', '');
+    const frontmatter = mod.frontmatter || {};
+    const title = frontmatter.title || slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    const description = frontmatter.description || '';
+    const publishDate = frontmatter.publishDate || frontmatter.date || '';
+    const category_tag = frontmatter.category || 'Reviews';
+    const readTime = frontmatter.readTime || '';
+    return {
+      slug,
+      href: `/reviews/${slug}`,
+      title,
+      description,
+      publishDate,
+      category: category_tag,
+      readTime,
+    };
+  })
+  .sort((a, b) => (b.publishDate || '').localeCompare(a.publishDate || ''));
 ---
-<Base title="Reviews" description={`Software reviews for ${site.niche}.`}>
-  <div style="max-width:840px; margin:0 auto; padding:5rem 2rem;">
-    <p class="section-label">Reviews</p>
-    <h1>All reviews</h1>
-    <p>Reviews will appear here as we publish them.</p>
-  </div>
+<Base title="Reviews" description={`Reviews for ${site.niche}.`}>
+  <section class="hero" style="padding-block:5rem 3rem;">
+    <div class="hero-inner container">
+      <p class="section-label">Reviews</p>
+      <h1 class="hero-h1">All reviews</h1>
+      <p class="hero-sub">In-depth software reviews from operators with thousands of locations and decades of combined experience.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      {articles.length === 0 ? (
+        <p style="text-align:center; padding:3rem; color:var(--text-muted, rgba(255,255,255,0.55));">
+          New reviews go live each week. Check back soon.
+        </p>
+      ) : (
+        <div class="article-grid">
+          {articles.map((a) => (
+            <a href={a.href} class="article-card">
+              {a.category && <span class="card-tag">{a.category}</span>}
+              <h3 class="card-title">{a.title}</h3>
+              {a.description && <p class="card-excerpt">{a.description}</p>}
+              <div class="card-meta">
+                {a.publishDate && <span>{a.publishDate}</span>}
+                {a.readTime && <><span aria-hidden="true">·</span><span>{a.readTime}</span></>}
+                <span class="card-arrow" aria-hidden="true">→</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <style>
+    .content-section {
+      padding: 3rem 0 6rem;
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      padding: 1.6rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+    .article-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--brandAccent, rgba(255,255,255,0.18));
+      background: rgba(255,255,255,0.06);
+    }
+    html[data-brand-mode='light'] .article-card {
+      background: #ffffff;
+      border-color: rgba(0,0,0,0.08);
+    }
+    html[data-brand-mode='light'] .article-card:hover {
+      border-color: var(--brandAccent);
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    .card-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brandAccent);
+      width: max-content;
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 0;
+    }
+    .card-excerpt {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.65);
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    html[data-brand-mode='light'] .card-excerpt {
+      color: rgba(0,0,0,0.62);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+    html[data-brand-mode='light'] .card-meta {
+      color: rgba(0,0,0,0.42);
+    }
+    .card-arrow {
+      margin-left: auto;
+      color: var(--brandAccent);
+      font-weight: 600;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brandAccent);
+      margin: 0 0 0.5rem;
+      font-weight: 700;
+    }
+    .hero-h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      margin: 0 0 1rem;
+      line-height: 1.1;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      max-width: 640px;
+      color: rgba(255,255,255,0.7);
+      margin: 0;
+    }
+    html[data-brand-mode='light'] .hero-sub {
+      color: rgba(0,0,0,0.65);
+    }
+  </style>
 </Base>
