@@ -5,53 +5,103 @@
   "framework": "astro",
   "redirects": [
     {
-      "source": "/recommends/shopify-plus",
-      "destination": "https://www.shopify.com/plus",
-      "permanent": false
-    },
-    {
-      "source": "/recommends/klaviyo",
-      "destination": "https://www.klaviyo.com/",
-      "permanent": false
-    },
-    {
-      "source": "/recommends/gorgias",
-      "destination": "https://www.gorgias.com/",
-      "permanent": false
-    },
-    {
-      "source": "/recommends/triplewhale",
-      "destination": "https://www.triplewhale.com/",
-      "permanent": false
-    },
-    {
-      "source": "/recommends/cin7",
-      "destination": "https://www.cin7.com/",
-      "permanent": false
-    },
-    {
-      "source": "/recommends/liverecover",
-      "destination": "https://liverecover.com/",
-      "permanent": false
-    },
-    {
       "source": "/recommends/gohighlevel",
       "destination": "https://www.gohighlevel.com/?fp_ref=stosh61",
       "permanent": false
     },
     {
-      "source": "/recommends/unbounce",
-      "destination": "https://unbounce.com/",
-      "permanent": false
-    },
-    {
       "source": "/recommends/aweber",
-      "destination": "https://www.aweber.com/easy-email.htm?id=560455",
+      "destination": "https://www.aweber.com/pro.htm?id=560455",
       "permanent": false
     },
     {
-      "source": "/recommends/jotform",
-      "destination": "https://www.jotform.com/",
+      "source": "/recommends/invideo",
+      "destination": "https://invideo.sjv.io/MX07zn",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/retouch4me",
+      "destination": "https://relu0u.pxf.io/rEGBZd",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/munch-studio",
+      "destination": "https://goto.munchstudio.com/B5zEM1",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/omnisend",
+      "destination": "https://your.omnisend.com/n4RkQ6",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/melio",
+      "destination": "https://melio.sjv.io/bkDbo9",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/surveysparrow",
+      "destination": "https://surveysparrowinc.pxf.io/zzegVO",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/thrivesparrow",
+      "destination": "https://thrivesparrow.sjv.io/aN54qq",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/sparrowdesk",
+      "destination": "https://sparrowdesk.pxf.io/AgmG9J",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/esignly",
+      "destination": "https://www.esignly.com/?via=stosh",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/profitbooks",
+      "destination": "https://www.profitbookshq.com/users/sign_up?partner=DZvqxdd4t0vk",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/clickfunnels",
+      "destination": "https://www.clickfunnels.com/signup-flow?aff=97be1496e78365fdf00fe7009d2e595d9d6c6163fb4fd6d02e61b30b9e8a7f30",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/moosend",
+      "destination": "https://trymoo.moosend.com/68v8v144fh7a",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/invoice-ninja",
+      "destination": "https://app.invoicing.co/#/register?rc=7n49ohj9s7tsdajjm4f8y8nswxnnmgir",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/cloudways",
+      "destination": "https://www.cloudways.com/en/?id=2108276",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/printify",
+      "destination": "https://try.printify.com/t9f3mafait11",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/docparser",
+      "destination": "https://docparser.com/?ref=efhmj",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/ringplanet",
+      "destination": "https://preferredlongdistance.pxf.io/yZj0Ay",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/duda",
+      "destination": "https://duda.sjv.io/vDQBkN",
       "permanent": false
     }
   ],
