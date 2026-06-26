@@ -1439,3 +1439,56 @@ html[data-brand-mode='light'] .hero h1 strong {
 html[data-brand-mode='light'] .hero h1 {
   text-shadow: none;
 }
+
+/* visual-bugfix:2026-06-26 */
+/* Force the hero section to use a dark navy bg regardless of brand-mode,
+   so white hero text is always readable. Was rendering cream on the 6 newer
+   sites which made the white headline invisible. */
+section.hero {
+  background: linear-gradient(135deg, #0A1628 0%, #0D1F3C 40%, #0D2F3C 100%) !important;
+  color: #FFFFFF !important;
+}
+section.hero h1,
+section.hero .hero-sub,
+section.hero .hero-badge,
+section.hero p {
+  color: #FFFFFF !important;
+}
+section.hero h1 em,
+section.hero h1 .accent,
+section.hero h1 strong {
+  color: var(--brandAccent, #0EA5E9) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+section.hero .btn-teal {
+  background: var(--brandAccent, #0EA5E9) !important;
+  color: #FFFFFF !important;
+  border: 2px solid var(--brandAccent, #0EA5E9) !important;
+  font-weight: 700 !important;
+}
+section.hero .btn-outline {
+  background: rgba(255,255,255,0.08) !important;
+  color: #FFFFFF !important;
+  border: 2px solid rgba(255,255,255,0.45) !important;
+  font-weight: 600 !important;
+}
+section.hero .btn-outline:hover {
+  background: rgba(255,255,255,0.18) !important;
+}
+/* Nav 'Start Here' CTA — always force readable contrast against nav bg.
+   On dark navs use accent fill + white text; on light navs use solid bg. */
+.site-nav .nav-cta,
+nav .nav-cta,
+.nav-cta {
+  background: var(--brandAccent, #0EA5E9) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  font-weight: 700 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
+}
+.site-nav .nav-cta:hover {
+  background: var(--brandAccentLight, #38BDF8) !important;
+  color: #FFFFFF !important;
+}
