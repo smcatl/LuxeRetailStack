@@ -1,66 +1,153 @@
 ---
 import Base from '../layouts/Base.astro';
-import TrustBar from '../components/TrustBar.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { site } from '../config/site';
+
+const featuredLots = [
+  {
+    no: '001',
+    tag: 'Platform',
+    title: 'Shopify Plus 2026 — Field Review',
+    excerpt: 'After a year operating premium DTC catalogs on Plus, our team breaks down where the platform earns its price — and the two limits that still surface above $20M GMV.',
+    href: '/reviews/shopify-plus-review-2026',
+    readTime: '14 min',
+  },
+  {
+    no: '002',
+    tag: 'Lifecycle',
+    title: 'Klaviyo for Luxury Retail',
+    excerpt: 'Why segmentation depth — not template polish — is what separates a $500 AOV brand from a $5,000 AOV brand once flows go live.',
+    href: '/reviews/klaviyo-luxury-retail-2026',
+    readTime: '11 min',
+  },
+  {
+    no: '003',
+    tag: 'Guide',
+    title: 'The Luxury Retail Tech Stack',
+    excerpt: 'The seven categories every premium brand must wire up — and the specific platforms that hold up at scale across catalog, CX, and post-purchase.',
+    href: '/guides/best-luxury-retail-tech-stack-2026',
+    readTime: '13 min',
+  },
+];
+
+const editorialPillars = [
+  {
+    no: '01',
+    title: 'Operator perspective',
+    body: 'Every entry comes from a team that has actually deployed the platform in a premium retail environment — not a trial-account review.',
+  },
+  {
+    no: '02',
+    title: 'AOV-aware analysis',
+    body: 'Generic ecommerce advice falls apart above $500 AOV. We test for the friction points that hurt high-consideration purchases specifically.',
+  },
+  {
+    no: '03',
+    title: 'Catalogue transparency',
+    body: 'List prices, scale costs, hidden fees. The catalogue exists to help operators specify — not to hedge.',
+  },
+];
 ---
 <Base title={site.name} description={site.description}>
 
-  <!-- HERO -->
+  <!-- HERO — auction cover -->
   <section class="hero">
     <div class="hero-grid-overlay"></div>
     <div class="hero-inner container">
       <div class="hero-content">
-        <div class="hero-badge">
-          <span>⚡</span>
-          Built by operators, for operators
+        <div class="hero-badge" style="font-family:'Libre Baskerville',serif; font-style:italic; letter-spacing:0.04em;">
+          Curated for luxury retail operators
         </div>
-        <h1>Software reviews for <em>{site.niche}</em></h1>
+        <h1>The catalogue of software <em>that holds up at scale</em></h1>
         <p class="hero-sub">
-          Independent reviews and real-world comparisons. Editorially independent.
-          Just what actually works at scale.
+          Editorial reviews of the platforms behind premium retail — written by operators
+          who run the catalog, the checkout, and the customer file.
         </p>
         <div class="hero-actions">
-          <a href="/start-here" class="btn btn-teal btn-lg">Start Here →</a>
-          <a href="/reviews" class="btn btn-outline btn-lg" style="color:#FFFFFF; border-color:rgba(255,255,255,.6); background:rgba(255,255,255,.08);">All Reviews</a>
+          <a href="/reviews" class="btn btn-teal btn-lg">Browse the Catalogue →</a>
+          <a href="/guides/best-luxury-retail-tech-stack-2026" class="btn btn-outline btn-lg" style="color:#FFFFFF; border-color:rgba(255,255,255,.6); background:rgba(255,255,255,.08);">The Tech Stack</a>
+        </div>
+      </div>
+
+      <div class="hero-stat-card">
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">10<em>+</em></span>
+            <span class="stat-label">Lots in the catalogue</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">Premium</span>
+            <span class="stat-label">Vertical focus</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">Independent</span>
+            <span class="stat-label">Editorial standard</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">2026</span>
+            <span class="stat-label">Catalogue edition</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <section class="container" style="padding:clamp(1.5rem,4vw,2rem) clamp(1rem,4vw,1.5rem) 0;">
-    <TrustBar items={[
-      { number: 'Thousands+', label: 'Tools evaluated' },
-      { number: 'Independent', label: 'Editorial standard' },
-      { number: '2026', label: 'Latest update' },
-    ]} />
-  </section>
-
-  <!-- WHY -->
+  <!-- FEATURED LOTS -->
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <p class="section-label">Why {site.name}</p>
-        <h2 class="section-title">Advice that holds up in the real world</h2>
+        <p class="section-label">Featured Lots</p>
+        <h2 class="section-title">This edition's specified picks</h2>
+        <p class="section-sub" style="font-family:'Libre Baskerville',Georgia,serif; font-style:italic; opacity:0.78; max-width:42rem; margin-top:0.75rem;">
+          Three platforms reviewed in depth — each tested against the realities of premium retail catalog and customer files.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        {featuredLots.map(lot => (
+          <a href={lot.href} class="post-card">
+            <div class="post-card-body">
+              <div style="display:flex; align-items:baseline; gap:0.85rem; margin-bottom:0.6rem;">
+                <span style="font-family:'Libre Baskerville',serif; font-style:italic; color:#c9a84c; font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase;">Lot {lot.no}</span>
+                <span class="post-card-tag">{lot.tag}</span>
+              </div>
+              <h3 style="font-family:'Libre Baskerville',Georgia,serif;">{lot.title}</h3>
+              <p>{lot.excerpt}</p>
+              <div class="post-card-meta">
+                <span style="font-style:italic;">Reading time</span>
+                <span>·</span>
+                <span>{lot.readTime}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="/reviews" class="btn btn-outline">View Full Catalogue →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL STANDARD -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-label">Editorial Standard</p>
+        <h2 class="section-title">How {site.name} is written</h2>
       </div>
 
       <div class="feature-grid">
-        <div class="feature-item">
-          <div class="feature-icon feature-icon-teal">🏢</div>
-          <h3>Operator perspective</h3>
-          <p>Every recommendation comes from a team that has actually deployed the tool — not a blogger reviewing a free trial.</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon feature-icon-navy">⚡</div>
-          <h3>Specific to your niche</h3>
-          <p>Generic software advice doesn't translate. The {site.name} team focuses on how tools handle the realities of {site.niche}.</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon feature-icon-orange">💰</div>
-          <h3>Full cost transparency</h3>
-          <p>We list exact prices, what gets expensive at scale, and the hidden costs most reviewers skip.</p>
-        </div>
+        {editorialPillars.map(pillar => (
+          <div class="feature-item">
+            <div style="font-family:'Libre Baskerville',serif; font-style:italic; color:#c9a84c; font-size:1.1rem; letter-spacing:0.12em; margin-bottom:0.6rem;">— {pillar.no} —</div>
+            <h3 style="font-family:'Libre Baskerville',Georgia,serif;">{pillar.title}</h3>
+            <p>{pillar.body}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -69,8 +156,8 @@ import { site } from '../config/site';
   <section class="container" style="padding:clamp(1.5rem,4vw,2rem) clamp(1rem,4vw,1.5rem) clamp(2.5rem,6vw,4rem);">
     <NewsletterSignup
       variant="hero"
-      title={`Get the ${site.name} newsletter`}
-      description="One email a week with the best new reviews and tools we've tested. No spam."
+      title={`The ${site.name} catalogue, by email`}
+      description="One dispatch a week — new lots added to the catalogue, with editorial notes. No spam."
       ctaLabel="Subscribe"
     />
   </section>
