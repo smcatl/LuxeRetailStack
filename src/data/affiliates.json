@@ -184,5 +184,71 @@
     "status": "active",
     "category": "website-builder",
     "notes": "Cross-pollinated 2026-06-16 \u2014 partner active elsewhere in portfolio."
+  },
+  {
+    "slug": "all-cotton-and-linen",
+    "name": "All Cotton and Linen",
+    "url": "https://www.allcottonandlinen.com",
+    "commission": "Online Sale 10%",
+    "network": "impact",
+    "status": "active",
+    "category": "Apparel \u00b7 Home",
+    "applicationStatus": "approved",
+    "approvedAt": "2026-06-29T18:00:00Z"
+  },
+  {
+    "slug": "randolph",
+    "name": "Randolph",
+    "url": "https://www.randolphusa.com",
+    "commission": "Online Sale 6%-9%",
+    "network": "impact",
+    "status": "active",
+    "category": "Eyewear \u00b7 American-made",
+    "applicationStatus": "approved",
+    "approvedAt": "2026-06-29T18:00:00Z"
+  },
+  {
+    "slug": "paul-and-shark",
+    "name": "Paul & Shark",
+    "url": "https://www.paulshark.com",
+    "commission": "Sale 4%-8%",
+    "network": "impact",
+    "status": "active",
+    "category": "Luxury Apparel",
+    "applicationStatus": "approved",
+    "approvedAt": "2026-06-29T18:00:00Z"
+  },
+  {
+    "slug": "vuarnet-usa",
+    "name": "Vuarnet USA",
+    "url": "https://www.vuarnet.com",
+    "commission": "Online Sale 7%",
+    "network": "impact",
+    "status": "active",
+    "category": "Eyewear \u00b7 Luxury",
+    "applicationStatus": "approved",
+    "approvedAt": "2026-06-29T18:00:00Z"
+  },
+  {
+    "slug": "blue-nile",
+    "name": "Blue Nile",
+    "url": "https://www.bluenile.com",
+    "commission": "Online Sale 3.5%-5%",
+    "network": "impact",
+    "status": "active",
+    "category": "Jewelry \u00b7 Luxury",
+    "applicationStatus": "approved",
+    "approvedAt": "2026-06-29T18:00:00Z"
+  },
+  {
+    "slug": "outdoor-voices",
+    "name": "Outdoor Voices",
+    "url": "https://www.outdoorvoices.com",
+    "commission": "Online Sale",
+    "network": "impact",
+    "status": "active",
+    "category": "Apparel \u00b7 Athleisure",
+    "applicationStatus": "approved",
+    "approvedAt": "2026-06-29T18:00:00Z"
   }
 ]
