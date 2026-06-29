@@ -184,5 +184,17 @@
     "status": "active",
     "category": "website-builder",
     "notes": "Cross-pollinated 2026-06-16 \u2014 partner active elsewhere in portfolio."
+  },
+  {
+    "slug": "munch",
+    "name": "Munch",
+    "url": "https://munchstudio.com",
+    "commission": "Recurring Subscription",
+    "network": "impact",
+    "status": "active",
+    "category": "Social Media \u00b7 SMB",
+    "externalProgramId": "42530",
+    "applicationStatus": "approved",
+    "approvedAt": "2026-06-29T20:00:00Z"
   }
 ]
