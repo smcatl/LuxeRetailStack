@@ -226,5 +226,29 @@
     "externalProgramId": "42530",
     "applicationStatus": "approved",
     "approvedAt": "2026-06-29T20:00:00Z"
+  },
+  {
+    "slug": "thinkific",
+    "name": "Thinkific",
+    "url": "https://www.thinkific.com",
+    "commission": "Recurring Subscription 20%",
+    "network": "partnerstack",
+    "status": "active",
+    "category": "Online Courses \u00b7 SMB",
+    "externalProgramId": "co_n9PPahrOB6M8GU",
+    "applicationStatus": "approved",
+    "approvedAt": "2026-06-30T21:00:00Z"
+  },
+  {
+    "slug": "kit",
+    "name": "Kit (formerly ConvertKit)",
+    "url": "https://kit.com",
+    "commission": "Recurring Subscription 30%",
+    "network": "partnerstack",
+    "status": "active",
+    "category": "Email Marketing \u00b7 Creators",
+    "externalProgramId": "co_Aq32tsdHpjeweY",
+    "applicationStatus": "approved",
+    "approvedAt": "2026-06-30T21:00:00Z"
   }
 ]
